@@ -1,0 +1,9 @@
+### ANSIBLE-VAULT-ENCRYPTED-ENV ###
+tty > /dev/null
+TTY_RESULT_CODE=$?
+if [ $TTY_RESULT_CODE -eq 0 ]; then
+	source ~/venv/bin/activate
+	eval "$(ansible-vault view ./.env.sh)"
+	deactivate
+fi
+### ANSIBLE-VAULT-ENCRYPTED-ENV ###
